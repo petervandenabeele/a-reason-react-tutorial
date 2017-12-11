@@ -1,5 +1,15 @@
 let component = ReasonReact.statelessComponent("TodoApp");
 
+type item = {
+  title: string,
+  completed: bool
+};
+
+type state = {
+  /* this is type with a type argument */
+  items: list(item)
+};
+
 let make = (children) => {
   ...component,
   render: (self) =>
@@ -8,7 +18,7 @@ let make = (children) => {
         (ReasonReact.stringToElement("What to do"))
       </div>
       <div className="items">
-        (ReasonReact.stringToElement("A lot actually"))
+        (ReasonReact.stringToElement("A lot actually :-)"))
       </div>
     </div>
 };
